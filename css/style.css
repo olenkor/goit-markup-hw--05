@@ -234,6 +234,7 @@ img{
     margin: 0 auto;
     padding: 10px 30px;
     min-width: 200px;
+    transition: background-color var(--transition);
           
 }
 
@@ -329,26 +330,25 @@ border-radius: 4px;
     background-color: rgba(47, 48, 58, 0.8) ;
     font-family: var(--primary-font);
     font-weight: 700;
-    font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.03em;
     text-transform: uppercase;
     color: var(--light-text-color);
     padding: 27px 90px ;
     width: 100%;
-    height: 25%;
+    height: 70px;
     overflow: auto;
     bottom: 0;
     left: 0;
-    transform: translate(0, 100%);
-    transition: transform var(--transition-time) var(--transition);
+    /* transform: translate(0, 100%);
+    transition: transform var(--transition-time) var(--transition); */
 
 }
 
-.work-item:hover .work-overlay-text,
+/* .work-item:hover .work-overlay-text,
 .work-item-focus:focus .work-overlay-text {
     transform: translate(0, 0);
-}
+} */
 
 
 
@@ -417,7 +417,6 @@ border-radius: 4px;
     border-radius: 50%;
     margin: 0;
     transition: background-color var(--transition-time) var(--transition);
-    transition: fill var(--transition-time) var(--transition);
 }
 
 .social-list-link:hover,
@@ -432,6 +431,7 @@ border-radius: 4px;
 
 .social-list-icon{
     fill: #AFB1B8;
+    transition: fill var(--transition-time) var(--transition);
 
 }
 
@@ -563,7 +563,7 @@ border-radius: 4px;
 
     padding: 6px 22px;
     min-width: 73px;
-    transition: background-color, color, box-shadow var(--transition-time) var(--transition);
+    transition: background-color var(--transition-time) var(--transition), color var(--transition-time) var(--transition), box-shadow var(--transition-time) var(--transition);
 
 }
 .button:hover,
@@ -613,7 +613,7 @@ border-radius: 4px;
     height: 92px;
     border: 1px solid #AFB1B8;
     border-radius: 4px;
-    transition: fill, border-color var(--transition-time) var(--transition);
+    transition: border-color var(--transition-time) var(--transition);
 
 }
 
@@ -625,6 +625,7 @@ border-radius: 4px;
 
 .clients-list-icon{
     fill: #AFB1B8;
+    transition: fill var(--transition-time) var(--transition);
 
 }
 
@@ -714,7 +715,7 @@ border-radius: 4px;
     margin: 0;
     background-color: rgba(255, 255, 255, 0.1);
     fill: var(--light-text-color);
-    transition: background-color fill 1000ms var(--transition);
+    transition: fill var(--transition-time) var(--transition), background-color var(--transition-time) var(--transition);
     
 }
 
@@ -759,15 +760,44 @@ border-radius: 4px;
     background-color: var(--primary-bg-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
+    animation-name: open-modal-window;
+    animation-duration: 5000ms;
+    animation-timing-function: var(--transition);
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+    animation-play-state: running;
+  
+    
+
+@keyframes open-modal-window {
+        0%{
+            opacity: 0.1;
+        }
+        30%{
+            opacity: 0.3;
+        }
+        50%{
+            opacity: 0.5;
+        }
+        70%{
+             opacity: 0.7;
+        }
+        100%{
+            opacity: 1;
+
+        }
+    
+        
+    }
    
     
 }
 
 .modal-close-btn{
-    
     position: absolute;
     cursor: pointer;
-    
     top: 8px;
     right: 8px;
     display: flex;
@@ -775,23 +805,26 @@ border-radius: 4px;
     align-items: center;
     width: 30px;
     height: 30px;
-  
-    background-color: var(--primary-bg-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    background-color: var(--primary-bg-color);
+    background-size: contain;
+    
     padding: 0;
-    transition: border-color var(--transition-time) var(--transition);
+    /* transition: border-color var(--transition-time) var(--transition); */
 
    
 }
 .modal-close-btn-icon{
-    transition: fill var(--transition-time) var(--transition);
+    fill:#212121
+    /* transition: fill var(--transition-time) var(--transition); */
 }
 
-.modal-close-btn:hover .modal-close-btn-icon,
+/* .modal-close-btn:hover .modal-close-btn-icon,
 .modal-close-btn:focus .modal-close-btn-icon{
    fill: var(--accent-color);
 
-}
+} */
 
 
 
